@@ -1,0 +1,118 @@
+---
+title: Quickstart Guide
+description: Get started with Bk Documentation by setting up your first documentation space and creating initial content.
+---
+
+## Overview
+
+Follow these steps to set up your first documentation space in Bk Documentation. You will create a space, add pages, navigate the interface, and invite team members. This guide takes under 5 minutes.
+
+<Callout kind="tip">
+  Use your brand color `{ #3B82F6 }` in custom themes after setup.
+</Callout>
+
+## Create a New Documentation Space
+
+Set up a dedicated space for your project documentation.
+
+<Steps>
+  <Step title="Sign Up or Log In" icon="user">
+    Visit `bkdocs.com` and create an account using your email or GitHub.
+  </Step>
+  <Step title="Create Space" icon="plus">
+    Click the `{+}` button in the dashboard. Enter a name like `My Project Docs` and select `{Public}` or `{Private}` visibility.
+  </Step>
+  <Step title="Configure Basics" icon="settings">
+    Set your space slug to `my-project` and upload a logo.
+  </Step>
+</Steps>
+
+## Add Your First Page
+
+Create content using MDX. Choose your preferred method.
+
+<Tabs>
+  <Tab title="Visual Editor" icon="edit-3">
+    <Steps>
+      <Step title="New Page">
+        In your space, click `{New Page}`.
+      </Step>
+      <Step title="Add Content">
+        Use the drag-and-drop editor to add headings and text.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="Markdown" icon="code">
+    Write raw MDX directly.
+
+    <CodeGroup tabs="Frontmatter,Content">
+      ```yaml
+      ---
+      title: Introduction
+      description: Welcome to your docs.
+      ---
+      ```
+
+      ````markdown
+      ## Overview
+
+      Start writing your documentation here.
+
+      <Callout kind="info">
+        This is a sample callout.
+      </Callout>
+      ````
+    </CodeGroup>
+  </Tab>
+</Tabs>
+
+## Basic Navigation and Editing
+
+Master the interface quickly.
+
+| Action              | Shortcut/Location                  | Description                          |
+|---------------------|------------------------------------|--------------------------------------|
+| Edit Page           | `{...}` menu > `{Edit}`            | Open visual or markdown editor      |
+| Preview Changes     | Top toolbar `{Eye}` icon           | Live preview without saving         |
+| Publish             | `{Publish}` button                 | Make changes live                   |
+| Search Docs         | Top search bar `{Ctrl+K}`          | Find pages and content              |
+
+<Callout kind="info">
+  Keyboard shortcuts like `{Ctrl+S}` save drafts automatically.
+</Callout>
+
+## Invite Collaborators
+
+Share your space with your team.
+
+<Steps>
+  <Step title="Open Settings" icon="settings">
+    Go to space `{Settings}` > `{Members}`.
+  </Step>
+  <Step title="Add Member" icon="user-plus">
+    Enter email addresses and assign roles: `{Admin}`, `{Editor}`, or `{Viewer}`.
+  </Step>
+  <Step title="Send Invite" icon="send">
+    Collaborators receive an email to join.
+  </Step>
+</Steps>
+
+## Next Steps
+
+Explore more features to enhance your documentation.
+
+<Columns cols={3}>
+  <Card title="Custom Themes" icon="palette" href="/docs/themes">
+    Apply your brand color `{ #3B82F6 }` and custom styles.
+  </Card>
+  <Card title="Version Control" icon="git-branch" href="/docs/git">
+    Connect to GitHub for seamless workflows.
+  </Card>
+  <Card title="Analytics" icon="bar-chart-3" href="/docs/analytics">
+    Track page views and engagement.
+  </Card>
+</Columns>
+
+<Expandable title="Advanced Editing Tips" default-open="false">
+  Use components like `<Steps>` and `<Tabs>` for interactive guides. Escape special characters such as `{` and `}` with backticks in prose.
+</Expandable>

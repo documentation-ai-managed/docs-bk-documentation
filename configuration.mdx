@@ -1,0 +1,156 @@
+---
+title: Configuration and Customization
+description: Learn how to configure your documentation space, apply branding, and set up permissions.
+---
+
+## Branding
+
+Customize your Bk Documentation space with your brand colors and logo. Start by accessing the space settings.
+
+<Columns cols={2}>
+  <Card title="Primary Color" icon="palette" href="#">
+    Set your main brand color, such as `#3B82F6`.
+  </Card>
+  <Card title="Logo Upload" icon="image" href="#">
+    Upload custom logos for header and favicon.
+  </Card>
+</Columns>
+
+Follow these steps to apply branding:
+
+<Steps>
+  <Step title="Access Settings" icon="settings">
+    Navigate to **Space Settings** > **Branding**.
+  </Step>
+  <Step title="Update Colors" icon="palette">
+    Enter your hex color code in the **Primary Color** field.
+  </Step>
+  <Step title="Upload Assets" icon="upload">
+    Drag and drop your logo files (PNG or SVG recommended).
+  </Step>
+  <Step title="Preview and Save" icon="eye">
+    Preview changes and click **Save**.
+  </Step>
+</Steps>
+
+<Callout kind="tip">
+  Use hex colors like `#3B82F6` for consistency. Test on dark and light themes.
+</Callout>
+
+## User Roles and Permissions
+
+Manage access with predefined roles. Assign roles to control what users can do.
+
+| Role       | View Pages | Edit Pages | Manage Users | Delete Content |
+|------------|------------|------------|--------------|----------------|
+| Viewer     | ✅        | ❌        | ❌          | ❌            |
+| Editor     | ✅        | ✅        | ❌          | ❌            |
+| Admin      | ✅        | ✅        | ✅          | ✅            |
+
+<Callout kind="alert">
+  Admins have full access. Review permissions before assigning.
+</Callout>
+
+## Space Settings and Integrations
+
+Configure integrations like GitHub sync or analytics.
+
+<Tabs>
+  <Tab title="GitHub" icon="github">
+    Connect your repository for automatic sync.
+
+    <CodeGroup tabs="JSON,YAML">
+    ````json
+    {
+      "integration": {
+        "github": {
+          "repo": "your-org/bk-docs",
+          "branch": "main",
+          "token": "ghp_YOUR_TOKEN"
+        }
+      }
+    }
+    ````
+
+    ````yaml
+    integration:
+      github:
+        repo: your-org/bk-docs
+        branch: main
+        token: ghp_YOUR_TOKEN
+    ````
+    </CodeGroup>
+  </Tab>
+  <Tab title="Analytics" icon="bar-chart">
+    Add Google Analytics or custom scripts.
+
+    Update your `bk-config.json`:
+
+    ````json
+    {
+      "analytics": {
+        "google": {
+          "trackingId": "G-XXXXXXXXXX"
+        }
+      }
+    }
+    ````
+  </Tab>
+</Tabs>
+
+## Advanced Permissions
+
+<Expandable title="Custom Role Permissions" default-open="false">
+
+Define granular permissions in your config file.
+
+````json
+{
+  "permissions": {
+    "roles": {
+      "contributor": {
+        "pages": ["read", "write"],
+        "spaces": ["read"],
+        "users": ["invite"]
+      }
+    }
+  }
+}
+````
+
+</Expandable>
+
+## Exporting Documentation
+
+Export your space as PDF, HTML, or Markdown archive.
+
+<Steps>
+  <Step title="Select Format" icon="download">
+    Go to **Space Settings** > **Export**.
+  </Step>
+  <Step title="Choose Options" icon="filter">
+    Select pages, include images, and set theme.
+  </Step>
+  <Step title="Generate" icon="loader">
+    Click **Export** and download the file.
+  </Step>
+</Steps>
+
+Customize export settings:
+
+<CodeGroup tabs="CLI,UI">
+````bash
+bk-export --space=my-space --format=pdf --theme=dark
+````
+
+````javascript
+// UI config equivalent
+const exportConfig = {
+  format: 'pdf',
+  theme: 'dark',
+  includeImages: true
+};
+````
+</CodeGroup>
+
+These configurations ensure your Bk Documentation space matches your brand and security needs. Test changes in a preview mode before applying site-wide.

@@ -1,0 +1,113 @@
+---
+title: User Guide
+description: Step-by-step instructions for managing and organizing your project documentation effectively.
+---
+
+## Overview
+
+Welcome to the Bk Documentation User Guide. Use this page to learn how to create pages, organize content into topics, leverage templates, and apply advanced formatting. Follow these instructions to build a comprehensive documentation space for your projects.
+
+<Columns cols={3}>
+  <Card title="Create Pages" icon="file-plus" href="#">
+    Start new documentation pages quickly.
+  </Card>
+  <Card title="Organize Topics" icon="folder" href="#">
+    Structure your content hierarchically.
+  </Card>
+  <Card title="Templates & Imports" icon="upload" href="#">
+    Reuse and import existing content.
+  </Card>
+</Columns>
+
+## Creating and Editing Pages
+
+Create new pages directly in your Bk workspace. Begin by navigating to the root folder and selecting "New Page".
+
+<Steps>
+  <Step title="Create a Page" icon="plus">
+    Click the `+` button in the sidebar. Enter a title like "API Reference" and select MDX format.
+  </Step>
+  <Step title="Edit Content" icon="edit-3">
+    Use the visual editor for markdown or switch to source mode. Add headings, lists, and components.
+  </Step>
+  <Step title="Publish Changes" icon="upload-cloud">
+    Save and preview. Click "Publish" to make it live.
+  </Step>
+</Steps>
+
+<Callout kind="tip">
+  Enable version history in settings to track edits over time.
+</Callout>
+
+## Organizing Content with Topics
+
+Topics group related pages. Create a topic for each major section, like "Getting Started" or "API".
+
+<Tabs>
+  <Tab title="Web Interface" icon="globe">
+    In the sidebar, right-click a folder and select "New Topic". Drag pages into it.
+  </Tab>
+  <Tab title="CLI" icon="terminal">
+    ```bash
+    bk topic create "User Guide" --parent docs
+    bk page move api-reference --to "User Guide"
+    ```
+  </Tab>
+</Tabs>
+
+## Using Templates and Imports
+
+Templates speed up page creation. Import from GitHub or local files.
+
+<CodeGroup tabs="Template,Import">
+  ```yaml
+  # page-template.mdx
+  ---
+  title: New Page
+  description: Add your content here.
+  ---
+  
+  ## Overview
+  
+  Write your documentation.
+  ```
+  ```bash
+  # Import via CLI
+  bk import github.com/user/repo/main/docs --to ./project-docs
+  ```
+</CodeGroup>
+
+<Callout kind="info">
+  Templates support YAML frontmatter for SEO and navigation.
+</Callout>
+
+## Advanced Formatting Options
+
+Unlock powerful formatting with components and custom styles.
+
+<Expandable title="Custom Components" default-open="false">
+  Embed interactive elements like tabs and steps. Use brand color `#3B82F6` for consistency:
+
+  ```css
+  .bk-brand {
+    color: #3B82F6;
+    font-weight: bold;
+  }
+  ```
+
+  Apply in MDX: `<span className="bk-brand">Bk Documentation</span>`.
+</Expandable>
+
+<Expandable title="Keyboard Shortcuts">
+  - <kbd>Ctrl</kbd>+<kbd>S</kbd>: Save
+  - <kbd>Ctrl</kbd>+<kbd>K</kbd>: Search docs
+  - <kbd>Ctrl</kbd>+<kbd>P</kbd>: Preview
+</Expandable>
+
+| Feature | Web | CLI |
+|---------|-----|-----|
+| Page Creation | Visual editor | `bk page create` |
+| Topic Management | Drag & drop | `bk topic` commands |
+| Imports | Upload ZIP | Git/GitHub sync |
+
+Use these tools to maintain organized, professional documentation. Explore further by experimenting in your workspace.

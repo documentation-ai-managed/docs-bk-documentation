@@ -1,0 +1,125 @@
+---
+title: Changelog
+description: Track updates and improvements to Bk Documentation with version history and release notes.
+---
+
+## Recent Releases
+
+Stay current with Bk Documentation's evolution. You receive automatic updates to access new features and fixes. Review the latest releases below to understand changes and plan your workflow.
+
+<Columns cols={3}>
+  <Card title="New Features" icon="sparkles" href="/docs/features">
+    Discover capabilities like real-time collaboration and advanced search.
+  </Card>
+  <Card title="Bug Fixes" icon="bug" href="/docs/troubleshooting">
+    Resolve common issues with detailed patches.
+  </Card>
+  <Card title="Migration Guide" icon="arrow-right" href="/docs/migration">
+    Upgrade smoothly between versions.
+  </Card>
+</Columns>
+
+<Callout kind="info">
+  Enable notifications in your account settings to get alerts for major releases.
+</Callout>
+
+<Update label="2024-10-15" description="v1.2.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Added real-time collaboration: Multiple users edit documents simultaneously with live cursors and conflict resolution.
+- Introduced advanced search: Filter by tags, dates, and content types with full-text indexing.
+
+## Improvements
+
+- Enhanced MDX rendering performance by 40% for large documentation sites.
+- Updated UI components with better accessibility support, including ARIA labels.
+
+## Bug Fixes
+
+- Fixed rendering issues with nested code blocks in MDX files.
+- Resolved authentication errors during session timeouts.
+
+</Update>
+
+<Update label="2024-09-20" description="v1.1.0" tags={["feature", "bugfix"]}>
+
+## New Features
+
+- Custom themes: Apply your brand colors like `#3B82F6` directly in settings.
+- Version history: Track and revert document changes with diff views.
+
+## Bug Fixes
+
+- Patched cross-site scripting vulnerability in user-generated content.
+- Corrected table rendering in exported PDFs.
+
+## Improvements
+
+- Optimized image loading for faster page renders.
+
+</Update>
+
+<Update label="2024-08-10" description="v1.0.0" tags={["breaking", "feature"]}>
+
+## New Features
+
+- Core MDX documentation engine with component support.
+- Project organization: Create spaces, folders, and tags for your docs.
+
+## Breaking Changes
+
+- Updated API endpoints from `/v0/` to `/v1/` prefix. Migrate using the guide.
+
+## Initial Setup
+
+- Basic authentication with API keys.
+- Dashboard for managing documentation spaces.
+
+</Update>
+
+## Stay Updated
+
+Follow these steps to monitor and apply updates:
+
+<Steps>
+  <Step title="Check Dashboard" icon="monitor">
+    Visit your Bk Documentation dashboard daily for banners on new releases.
+  </Step>
+  <Step title="Review Notes" icon="book-open">
+    Read release notes here and test changes in a staging space.
+  </Step>
+  <Step title="Update Config" icon="settings">
+    Run the update command:
+
+    <CodeGroup tabs="CLI,Docker">
+```bash
+bk-docs update --latest
+```
+```dockerfile
+docker pull bkdocs/image:latest
+docker-compose up -d
+```
+    </CodeGroup>
+  </Step>
+</Steps>
+
+## Upcoming Changes
+
+<ExpandableGroup>
+  <Expandable title="v1.3.0 Preview" default-open="false">
+    Plan for AI-assisted content generation and plugin ecosystem. Expect beta access next month.
+  </Expandable>
+  <Expandable title="Deprecations">
+    Remove legacy YAML frontmatter parsing in favor of stricter MDX validation.
+  </Expandable>
+</ExpandableGroup>
+
+<Tabs>
+  <Tab title="Features" icon="sparkles">
+    Track enhancements like collaboration tools.
+  </Tab>
+  <Tab title="Fixes" icon="bug">
+    Review resolved issues impacting stability.
+  </Tab>
+</Tabs>
